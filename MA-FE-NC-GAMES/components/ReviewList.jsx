@@ -4,6 +4,7 @@ import ReviewCard from "./ReviewCard";
 
 export default function ReviewList() {
 	const [reviews, setReviews] = useState([]);
+	const [isLoading, setIsLoading] = useState(true);
 
 	useEffect(() => {
 		fetchReviews()
@@ -12,8 +13,13 @@ export default function ReviewList() {
 			})
 			.then((reviews) => {
 				setReviews(reviews);
+				setIsLoading(false);
 			});
 	}, []);
+
+	if (isLoading) {
+		return <p className="loading">Loading...</p>;
+	}
 
 	return (
 		<section className="container">
