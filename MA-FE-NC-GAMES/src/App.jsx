@@ -1,12 +1,20 @@
 import { useState } from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
+import Nav from "../components/Nav";
+import ReviewList from "../components/ReviewList";
 
 function App() {
 	return (
-		<>
-			<h1>MA-FE-NC-GAMES</h1>
-			<p>This will be the home page!</p>
-		</>
+		<BrowserRouter>
+			<>
+				<Nav />
+				<h1>MA-FE-NC-GAMES</h1>
+				<Routes>
+					<Route path="/" element={<ReviewList />} />
+				</Routes>
+			</>
+		</BrowserRouter>
 	);
 }
 
