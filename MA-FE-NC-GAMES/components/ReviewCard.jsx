@@ -2,7 +2,6 @@ import { Link } from "react-router-dom";
 
 const ReviewCard = (props, { setCategories }) => {
 	const { review_id, title, category, review_img_url } = props;
-	console.log(props, "Props in card");
 
 	return (
 		<article className="review-card">
