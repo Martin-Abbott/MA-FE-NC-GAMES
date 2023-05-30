@@ -40,3 +40,9 @@
 .read-the-docs {
 	color: #888;
 }
+
+.review-card {
+	border: 2px dashed red;
+	padding: 2px;
+	margin: 2px;
+}
