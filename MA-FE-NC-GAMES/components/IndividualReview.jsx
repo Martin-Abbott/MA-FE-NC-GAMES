@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { fetchReviewById } from "./api";
 import { IndividualReviewCard } from "../components/IndividualReviewCard";
+import { CommentList } from "./CommentList";
 
 export default function IndividualReview() {
 	const [review, setReview] = useState([]);
@@ -20,11 +21,11 @@ export default function IndividualReview() {
 	}, []);
 
 	if (isLoading) {
-		return <p className="loading">Loading...</p>;
+		return <p className="loading">Loading Review...</p>;
 	}
 
 	return (
-		<section className="container">
+		<section className="individual-review-container">
 			{review.map((individualReview) => {
 				const {
 					review_id,
@@ -51,6 +52,7 @@ export default function IndividualReview() {
 					/>
 				);
 			})}
+			<CommentList />
 		</section>
 	);
 }
