@@ -23,23 +23,32 @@ export function CommentList() {
 		return <p className="loading">Loading Comments...</p>;
 	}
 
-	return (
-		<section className="comments-container">
-			<h3>Comments</h3>
-			{comments.map((comment) => {
-				const { comment_id, body, review_id, author, votes, created_at } =
-					comment;
-				return (
-					<CommentCard
-						key={comment_id}
-						review_id={review_id}
-						body={body}
-						author={author}
-						votes={votes}
-						created_at={created_at}
-					/>
-				);
-			})}
-		</section>
-	);
+	if (comments.length >= 1) {
+		return (
+			<section className="comments-container">
+				<h3>Comments</h3>
+				{comments.map((comment) => {
+					const { comment_id, body, review_id, author, votes, created_at } =
+						comment;
+					return (
+						<CommentCard
+							key={comment_id}
+							review_id={review_id}
+							body={body}
+							author={author}
+							votes={votes}
+							created_at={created_at}
+						/>
+					);
+				})}
+			</section>
+		);
+	} else {
+		return (
+			<section className="comments-container">
+				<h3>Comments</h3>
+				<p>No comments have been added for this review yet</p>
+			</section>
+		);
+	}
 }
