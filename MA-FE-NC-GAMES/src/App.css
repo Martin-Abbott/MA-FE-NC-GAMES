@@ -41,6 +41,20 @@
 	color: #888;
 }
 
+.comments-container {
+	border: 2px dashed blue;
+	border-radius: 5%;
+	padding: 2px;
+	margin: 2px;
+}
+
+.comment-card {
+	border: 2px dashed blue;
+	border-radius: 10%;
+	padding: 2px;
+	margin: 2px;
+}
+
 .review-card {
 	border: 2px dashed red;
 	border-radius: 5%;

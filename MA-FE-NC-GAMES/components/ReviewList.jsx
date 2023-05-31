@@ -18,11 +18,11 @@ export default function ReviewList() {
 	}, []);
 
 	if (isLoading) {
-		return <p className="loading">Loading...</p>;
+		return <p className="loading">Loading Reviews...</p>;
 	}
 
 	return (
-		<section className="container">
+		<section className="reviews-container">
 			{reviews.map((review) => {
 				const { review_id, title, category, review_img_url } = review;
 				return (
