@@ -43,6 +43,14 @@
 
 .review-card {
 	border: 2px dashed red;
+	border-radius: 5%;
+	padding: 2px;
+	margin: 2px;
+}
+
+.individual-review-card {
+	border: 2px dashed red;
+	border-radius: 5%;
 	padding: 2px;
 	margin: 2px;
 }
