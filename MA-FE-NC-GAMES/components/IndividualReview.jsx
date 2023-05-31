@@ -41,6 +41,7 @@ export default function IndividualReview() {
 				return (
 					<IndividualReviewCard
 						key={review_id}
+						review_id={review_id}
 						title={title}
 						category={category}
 						designer={designer}

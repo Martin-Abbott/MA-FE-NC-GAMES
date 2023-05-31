@@ -13,6 +13,7 @@ const ReviewCard = (props, { setCategories }) => {
 			<img className="review-image" src={review_img_url} alt={title}></img>
 			<p>
 				Category:
+				{"\n"}
 				<Link
 					to={`/reviews?category=${category}`}
 					onClick={() => {
