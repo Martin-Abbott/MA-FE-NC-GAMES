@@ -13,4 +13,13 @@ function fetchReviews() {
 		.catch((err) => console.log(err));
 }
 
-export { fetchReviews };
+function fetchReviewById(review_id) {
+	return gamesReviewApi
+		.get(`/reviews/${review_id}`)
+		.then((res) => {
+			return res.data;
+		})
+		.catch((err) => console.log(err));
+}
+
+export { fetchReviews, fetchReviewById };
