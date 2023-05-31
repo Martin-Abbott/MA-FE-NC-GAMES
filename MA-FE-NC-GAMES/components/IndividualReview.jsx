@@ -8,8 +8,6 @@ export default function IndividualReview() {
 	const [isLoading, setIsLoading] = useState(true);
 	const { review_id } = useParams();
 
-	console.log(review_id, "review_id in IR.jsx");
-
 	useEffect(() => {
 		fetchReviewById(review_id)
 			.then(({ review }) => {
@@ -17,7 +15,6 @@ export default function IndividualReview() {
 			})
 			.then((review) => {
 				setReview(review);
-				console.log(review, "Review in IR.jsx");
 				setIsLoading(false);
 			});
 	}, []);

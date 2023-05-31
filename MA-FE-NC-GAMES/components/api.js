@@ -14,7 +14,6 @@ function fetchReviews() {
 }
 
 function fetchReviewById(review_id) {
-	console.log(review_id, "review_id in api.js");
 	return gamesReviewApi
 		.get(`/reviews/${review_id}`)
 		.then((res) => {

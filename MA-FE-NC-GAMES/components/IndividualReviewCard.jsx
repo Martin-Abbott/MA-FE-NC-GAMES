@@ -42,5 +42,3 @@ export const IndividualReviewCard = (props) => {
 		</article>
 	);
 };
-
-// export default IndividualReviewCard;
