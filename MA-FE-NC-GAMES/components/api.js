@@ -39,9 +39,18 @@ function patchReviewVotes(review_id, num) {
 		});
 }
 
+function postComment(review_id, comment) {
+	return gamesReviewApi
+		.post(`/reviews/${review_id}/comments`, comment)
+		.then((res) => {
+			return res;
+		});
+}
+
 export {
 	fetchReviews,
 	fetchReviewById,
 	fetchCommentsByReviewId,
 	patchReviewVotes,
+	postComment,
 };
