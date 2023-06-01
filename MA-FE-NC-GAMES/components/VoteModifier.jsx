@@ -10,7 +10,9 @@ const VoteModifier = ({ votes, review_id }) => {
 		setErr(null);
 		patchReviewVotes(review_id, 1).catch((err) => {
 			setCurrentVotes((currentVotes) => currentVotes - 1);
-			setErr("Sorry, that didn't work, please try again");
+			setErr(
+				`${err.response.data.msg}. Please refresh the page and try again.`
+			);
 		});
 	};
 
@@ -19,7 +21,9 @@ const VoteModifier = ({ votes, review_id }) => {
 		setErr(null);
 		patchReviewVotes(review_id, -1).catch((err) => {
 			setCurrentVotes((currentVotes) => currentVotes + 1);
-			setErr("Sorry, that didn't work, please try again");
+			setErr(
+				`${err.response.data.msg}. Please refresh the page and try again.`
+			);
 		});
 	};
 

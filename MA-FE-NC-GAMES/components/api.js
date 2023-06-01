@@ -35,12 +35,9 @@ function patchReviewVotes(review_id, num) {
 	return gamesReviewApi
 		.patch(`/reviews/${review_id}`, { inc_votes: num })
 		.then((res) => {
-			return res.data.review.votes;
-		})
-		.catch((err) => console.log(err));
+			return res;
+		});
 }
-
-// patchReviewVotes needs incVotesObj = { inc_votes: 1 };
 
 export {
 	fetchReviews,
