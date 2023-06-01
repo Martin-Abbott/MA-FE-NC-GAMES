@@ -7,7 +7,7 @@ export const CommentCard = (props) => {
 			<ul>
 				<li>Author: {author}</li>
 				<li>Votes: {votes}</li>
-				<li>Created at: {created_at}</li>
+				<li>Comment date: {created_at.slice(0, 10)}</li>
 			</ul>
 		</article>
 	);

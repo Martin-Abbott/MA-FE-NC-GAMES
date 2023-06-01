@@ -1,7 +1,9 @@
 import { Link } from "react-router-dom";
+import VoteModifier from "./VoteModifier";
 
 export const IndividualReviewCard = (props) => {
 	const {
+		review_id,
 		title,
 		category,
 		designer,
@@ -24,6 +26,7 @@ export const IndividualReviewCard = (props) => {
 			<ul>
 				<li>
 					Category:
+					{"\n"}
 					<Link
 						to={`/reviews?category=${category}`}
 						onClick={() => {
@@ -36,8 +39,10 @@ export const IndividualReviewCard = (props) => {
 				</li>
 				<li>Designer: {designer}</li>
 				<li>Owner: {owner}</li>
-				<li>Review date: {created_at}</li>
-				<li>Votes: {votes}</li>
+				<li>Review date: {created_at.slice(0, 10)}</li>
+				<li>
+					<VoteModifier votes={votes} review_id={review_id} />
+				</li>
 			</ul>
 		</article>
 	);
