@@ -3,6 +3,7 @@ import { postComment } from "./api";
 
 const CommentAdder = ({ review_id, setComments, values, setValues }) => {
 	const [err, setErr] = useState(null);
+	const [isDisabled, setIsDisabled] = useState(true);
 
 	const handleInputChange = (event) => {
 		setValues({
@@ -13,10 +14,16 @@ const CommentAdder = ({ review_id, setComments, values, setValues }) => {
 			votes: 0,
 			created_at: new Date().toISOString(),
 		});
+		if (event.target.value.length >= 1) {
+			setIsDisabled(false);
+		} else {
+			setIsDisabled(true);
+		}
 	};
 
 	const handleSubmit = (event) => {
 		event.preventDefault();
+		setIsDisabled(true);
 		setComments((currentComments) => {
 			return [values, ...currentComments];
 		});
@@ -45,7 +52,7 @@ const CommentAdder = ({ review_id, setComments, values, setValues }) => {
 					placeholder="Your comment..."
 					onChange={handleInputChange}
 				></input>
-				<button type="submit" className="commentSubmit">
+				<button type="submit" className="commentSubmit" disabled={isDisabled}>
 					Submit
 				</button>
 			</form>
