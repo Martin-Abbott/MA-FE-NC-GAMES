@@ -10,7 +10,8 @@ function App() {
 		<BrowserRouter>
 			<>
 				<Nav />
-				<h1>MA-FE-NC-GAMES</h1>
+				<h1>Bizarre Boardgame Bazaar</h1>
+				<p>Home of the most bizarre boardgame reviews on the internet!</p>
 				<Routes>
 					<Route path="/" element={<ReviewList />} />
 					<Route path="/reviews/:review_id" element={<IndividualReview />} />
