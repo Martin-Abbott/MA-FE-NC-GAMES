@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-const ReviewCard = (props, { setCategories }) => {
+const ReviewCard = (props) => {
 	const { review_id, title, category, review_img_url } = props;
 
 	return (
@@ -14,13 +14,7 @@ const ReviewCard = (props, { setCategories }) => {
 			<p>
 				Category:
 				{"\n"}
-				<Link
-					to={`/reviews?category=${category}`}
-					onClick={() => {
-						setCategories(category);
-					}}
-					key={category}
-				>
+				<Link to={`/reviews?category=${category}`} key={category}>
 					{category}
 				</Link>
 			</p>

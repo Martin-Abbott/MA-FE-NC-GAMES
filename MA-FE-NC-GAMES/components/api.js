@@ -4,9 +4,9 @@ const gamesReviewApi = axios.create({
 	baseURL: "https://games-review-database-server.onrender.com/api",
 });
 
-function fetchReviews() {
+function fetchReviews(params) {
 	return gamesReviewApi
-		.get("/reviews")
+		.get("/reviews", params)
 		.then((res) => {
 			return res.data;
 		})
@@ -47,10 +47,17 @@ function postComment(review_id, comment) {
 		});
 }
 
+function fetchCategories() {
+	return gamesReviewApi.get("/categories").then((res) => {
+		return res.data;
+	});
+}
+
 export {
 	fetchReviews,
 	fetchReviewById,
 	fetchCommentsByReviewId,
 	patchReviewVotes,
 	postComment,
+	fetchCategories,
 };
