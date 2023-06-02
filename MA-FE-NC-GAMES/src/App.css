@@ -44,6 +44,22 @@
 	margin: 2px;
 }
 
+.categories-container {
+	max-width: 90vw;
+	border: 2px dashed blue;
+	border-radius: 20px;
+	padding: 2px;
+	margin: 2px;
+}
+
+.category-card {
+	max-width: 90vw;
+	border: 2px dashed red;
+	border-radius: 20px;
+	padding: 2px;
+	margin: 2px;
+}
+
 .reviews-container {
 	max-width: 90vw;
 	border: 2px dashed blue;
