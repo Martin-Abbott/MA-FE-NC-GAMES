@@ -11,6 +11,7 @@ export function CommentList() {
 	});
 	const [comments, setComments] = useState([]);
 	const [isLoading, setIsLoading] = useState(true);
+	const [commentToDelete, setCommentToDelete] = useState("");
 	const { review_id } = useParams();
 
 	useEffect(() => {
@@ -22,7 +23,7 @@ export function CommentList() {
 				setComments(comments);
 				setIsLoading(false);
 			});
-	}, [values]);
+	}, [values, commentToDelete]);
 
 	if (isLoading) {
 		return <p className="loading">Loading Comments...</p>;
@@ -45,11 +46,15 @@ export function CommentList() {
 					return (
 						<CommentCard
 							key={comment_id}
+							comment_id={comment_id}
 							review_id={review_id}
 							body={body}
 							author={author}
 							votes={votes}
 							created_at={created_at}
+							values={values}
+							setValues={setValues}
+							setCommentToDelete={setCommentToDelete}
 						/>
 					);
 				})}
