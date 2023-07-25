@@ -53,6 +53,12 @@ function fetchCategories() {
 	});
 }
 
+function deleteComment(comment_id) {
+	return gamesReviewApi.delete(`/comments/${comment_id}`).then((res) => {
+		return res.data;
+	});
+}
+
 export {
 	fetchReviews,
 	fetchReviewById,
@@ -60,4 +66,5 @@ export {
 	patchReviewVotes,
 	postComment,
 	fetchCategories,
+	deleteComment,
 };
