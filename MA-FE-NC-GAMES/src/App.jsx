@@ -12,6 +12,7 @@ function App() {
 			<>
 				<Nav />
 				<h1>Bizarre Boardgame Bazaar</h1>
+				<p>Home of the most bizarre boardgame reviews on the internet!</p>
 				<Routes>
 					<Route path="/" element={<Home />} />
 					<Route path="/reviews" element={<ReviewList />} />
