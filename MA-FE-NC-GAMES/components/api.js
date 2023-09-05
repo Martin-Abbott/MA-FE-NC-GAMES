@@ -22,6 +22,17 @@ function fetchReviewById(review_id) {
 		.catch((err) => console.log(err));
 }
 
+function fetchRandomReview() {
+	return gamesReviewApi
+		.get("/reviews")
+		.then((res) => {
+			return res.data.reviews[
+				Math.floor(Math.random() * res.data.reviews.length)
+			];
+		})
+		.catch((err) => console.log(err));
+}
+
 function fetchCommentsByReviewId(review_id) {
 	return gamesReviewApi
 		.get(`/reviews/${review_id}/comments`)
@@ -62,6 +73,7 @@ function deleteComment(comment_id) {
 export {
 	fetchReviews,
 	fetchReviewById,
+	fetchRandomReview,
 	fetchCommentsByReviewId,
 	patchReviewVotes,
 	postComment,

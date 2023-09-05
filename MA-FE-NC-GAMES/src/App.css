@@ -5,27 +5,29 @@
 	text-align: center;
 }
 
-@keyframes logo-spin {
-	from {
-		transform: rotate(0deg);
-	}
-	to {
-		transform: rotate(360deg);
-	}
+nav a {
+	padding: 0 2rem 0 2rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-	a:nth-of-type(2) .logo {
-		animation: logo-spin infinite 20s linear;
-	}
+p {
+	padding: 0 2rem 0 2rem;
+}
+
+ul {
+	list-style-type: none;
+	padding: 0.5rem 1rem 0.5rem 1rem;
+}
+
+form {
+	padding: 0.5rem;
+}
+
+form label {
+	padding: 0.5rem;
 }
 
 .card {
 	padding: 2em;
-}
-
-.read-the-docs {
-	color: #888;
 }
 
 .comments-container {
@@ -33,7 +35,7 @@
 	border: 2px dashed green;
 	border-radius: 20px;
 	padding: 2px;
-	margin: 2px;
+	margin: 2px auto;
 }
 
 .comment-card {
@@ -77,7 +79,7 @@
 }
 
 .review-image {
-	max-width: 85vw;
+	max-width: 75vw;
 }
 
 .individual-review-container {
